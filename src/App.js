@@ -18,7 +18,6 @@ function App(){
     setUsers([
       ...users,
       user
-
     ])
 
   }
@@ -34,17 +33,17 @@ function App(){
   const[editar,setEditar]=useState(false);
   
   const [currentUser,setCurrentUser]=useState({
-          id: "null",
-          nombre:"",
-          cedula:"",
-          telefono:"",
-          email:""
+          id: '',
+          nombre:'',
+          cedula:'',
+          telefono:'',
+          email:''
   });
   const editRow=(user)=>{
     setEditar(true);
     setCurrentUser({
-      id: user.nombre,
-      nombre:user.name,
+      id: user.id,
+      nombre:user.nombre,
       cedula:user.cedula,
       telefono:user.telefono,
       email:user.email

@@ -26,7 +26,8 @@ const UserTable =(props)=>{
                                 <td>{user.telefono}</td>
                                 <td>{user.email}</td>
                                 <td><button className="btn btn-outline-primary" 
-                                onClick={()=>{props.editRow(user)}}            
+                                onClick={()=>{props.editRow(user)}}
+                                type="button"         
                                 >Editar
                                 </button> 
                                 <button className="btn btn-outline-danger"

@@ -3,18 +3,25 @@ import { useForm } from 'react-hook-form'
 
 const EditarUsers=(props)=>{
 
-    const {handleSubmit}=useForm(
-        {
-            defaultValues:props.ConcurrentUsers
-        }
-    );
+    console.log(props.currentUser);
+
+    const {handleSubmit,setValue}=useForm(
+       {
+           defaultValues:props.currentUser
+       })
+        
+        setValue('id', props.currentUser.id);
+        setValue('nombre', props.currentUser.nombre);
+       setValue('cedula', props.currentUser.cedula);
+       setValue('telefono', props.currentUser.telefono);
+        setValue('email', props.currentUser.email);
+       
 
     
     const onSubmit = (data,e)=>{
         e.preventDefault();
         console.log(data)
-        props.agregarUsuarios(data)
-        //e.target.reset()
+        e.target.reset()
     }
     
     return(
@@ -68,7 +75,7 @@ const EditarUsers=(props)=>{
 
             </div>
             <div className="card-body">
-                <button className="btn btn-outline-success" type="submit" onSubmit={handleSubmit(onSubmit)}>Editar</button>
+                <button className="btn btn-outline-success" type="submit">Editar</button>
             </div>
         </div>
     </div>

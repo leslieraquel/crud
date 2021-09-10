@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+      image: node:12-alpine
+      volumes:
+          - ./:/crud-rt
+      working_dir: /crud-rt
+      ports:
+          - 3000:3000
+      command: npm start
+      tty: true
